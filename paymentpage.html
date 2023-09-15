@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Payment</title>
+      <link rel="stylesheet" href="./payment.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/4f46b33591.js" crossorigin="anonymous"></script>      
+</head>
+<body>
+
+  <div id="customPopupSucsess" class="popupSucsess">
+    <div class="popupSucsessContent">
+      <button id="popupSucsessBtn"><i class="fa-solid fa-x" style="color: #000000;"></i></button>
+      <div class="popupSucsessIcon">
+        <div class="popupCheck">
+          <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+        </div>  
+      </div>
+      <span id="popupSucsessMessage"></span>
+      <div class="popupSucsessButton">
+        <button id="orderDetails">Order Details</button>
+        <button id="backToShopping">Back To Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="customPopupDenied" class="popupDenied">
+    <div class="popupDeniedContent">
+      <button id="popupDeniedBtn"><i class="fa-solid fa-x" style="color: #000000;"></i></button>
+      <div class="popupDeniedIcon">
+        <div class="popupCrossed">
+          <i class="fa-solid fa-x" style="color: #ffffff;"></i>
+        </div>  
+      </div>
+      <span id="popupDeniedMessage"></span>
+    </div>
+  </div>
+
+  <div id="customPopupPersonalInfo" class="popupPersonalInfo">
+    <div class="popupPersonalInfoContent">
+      <button id="popupDeniedBtn"><i class="fa-solid fa-x" style="color: #000000;"></i></button>
+      <div class="popupDeniedIcon">
+        <div class="popupCrossed">
+          <i class="fa-solid fa-x" style="color: #ffffff;"></i>
+        </div>  
+      </div>
+      <span id="popupPersonalInfoMessage"></span>
+    </div>
+  </div>
+
+
+
+  <div class="personal-info">
+    <h2 id="personalInfoTitle">Personal Info</h2>
+    <div>
+      <label for="fullname">Name Surname:</label>
+      <input type="text" id="fullname" placeholder="Name Surname">
+    </div>
+    <div>
+      <label for="address">Adress:</label>
+      <input type="text" id="address" placeholder="Adress">
+    </div>
+    <div>
+      <label for="postalcode">Post Code:</label>
+      <input type="text" id="postalcode" placeholder="Post Code">
+    </div>
+    <div>
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" placeholder="E-Mail">
+    </div>
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="Phone Number">
+    </div>
+    <button class="continueBtn" onclick="checkPersonalInfo()">SAVE</button>
+  </div>  
+
+<script src="payment.js"></script>
+</body>
+</html>

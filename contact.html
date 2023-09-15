@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://kit.fontawesome.com/4f46b33591.js" crossorigin="anonymous"></script>
+</head>
+<style>
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 550px;
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.wrapper .title h1{
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+}
+
+.input-fields,
+.msg{
+  width: 48%;
+}
+
+.input-fields .input,
+.msg textarea{
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #ea5d0b;
+  padding: 10px;
+  color: white;
+  width: 100%;
+}
+
+.msg textarea{
+  height: 212px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: white;
+}
+
+.btn {
+    background: #ea5d0b;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s all;
+}
+
+.btn:hover{
+    background: #f0732b;
+}
+
+.siteEnd{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer {
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  height: 175px;
+  padding: 30px 20px;
+  border-bottom: 1px solid #646666;
+}
+
+footer h3 {
+  text-decoration: underline 2px #d13639;
+}
+
+.aboutUs {
+  padding: 0 40px;
+}
+
+.socialMedia {
+  padding: 0 40px;
+}
+
+.socialMedia ul {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobileApp ul {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.footerLeft {
+  display: flex;
+  width: 40%;
+  justify-content: left;
+}
+
+.footerRight {
+  display: flex;
+  width: 70%;
+  justify-content: right;
+}
+
+footer ul {
+  list-style: none;
+  align-items: center;
+}
+
+footer ul a {
+  text-decoration: none;
+  color: black;
+}
+
+footer ul li {
+  margin-right: 20px;
+  cursor: pointer;
+  padding-bottom: 5px;
+  padding-top: 8px;
+}
+
+footer ul li:hover {
+  color: #ea5d0b;
+  text-decoration: underline;
+}
+
+footer ul li i:hover {
+  color: #ea5d0b;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #989d9e;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+footer ul li i {
+  width: 25px;
+  font-size: 1.5rem;
+  color: #646666;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Bottom Section Styles */
+.end {
+  background: #f1f1f1;
+  display: flex;
+  height: 80px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  align-items: center;
+}
+
+.cpy {
+  width: 70%;
+  display: flex;
+  justify-content: left;
+}
+
+.cpy p {
+  color: #989d9e;
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+
+.return {
+  display: flex;
+  width: 30%;
+  justify-content: right;
+  padding-right: 40px;
+}
+
+.return a {
+  display: flex;
+  text-decoration: none;
+  color: #989d9e;
+}
+
+.return a h4 {
+  transition: all 0.2s ease;
+}
+
+.return i {
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+
+.return a:hover h4 {
+  color: black;
+}
+
+.return a:hover i {
+  color: #ea5d0b;
+}
+
+@media screen and (max-width: 600px){
+  .contact-form{
+    flex-direction: column;
+  }
+  .msg textarea{
+    height: 80px;
+  }
+  .input-fields,
+  .msg{
+    width: 100%;
+  }
+}</style>
+<body>
+    
+  <div id="popup" class="popup">
+    <div class="popup-content">
+        <p>Mesajınız tarafımıza iletilmiştir. En kısa sürede size geri dönüş sağlayacağız.</p>
+        <span class="close-popup" id="closePopup">&times;</span>
+    </div>
+</div>
+
+    <div class="wrapper">
+        <div class="title">
+          <h1>Contact Us</h1>
+        </div>
+        <div class="contact-form">
+          <div class="input-fields">
+            <input type="text" class="input" placeholder="Name">
+            <input type="text" class="input" placeholder="Email Address">
+            <input type="text" class="input" placeholder="Phone">
+            <input type="text" class="input" placeholder="Subject">
+          </div>
+          <div class="msg">
+            <textarea placeholder="Message"></textarea>
+            <div class="btn" id="sendBtn">send</div>
+          </div>
+        </div>
+      </div>
+     
+     <div class="siteEnd"> 
+      <footer>
+        <div class="aboutUs">
+          <h3>Who We Are</h3>
+          <ul>
+              <a href="aboutus.html" target="_blank"><li>About Us</li></a>
+              <a href="contact.html" target="_blank"><li>Contact</li></a>
+          </ul>
+      </div>
+      
+      <div class="customerServices">
+        <h3>Customer Services</h3>
+        <ul>
+            <a href="warranty.html" target="_blank"><li>Warranty & Return Conditions</li></a>
+            <a href="faq.html" target="_blank"><li>Frequently Asked Questions</li></a>
+        </ul>
+      </div>
+      
+      <div class="footerRight">
+        <div class="socialMedia">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-linkedin"></i></li>
+            <li><i class="fab fa-youtube"></i></li>
+        </ul>
+      </div>
+      
+      
+      <div class="mobileApp">
+        <h3>Mobile App</h3>
+        <ul>
+            <li>App Gallery</li>
+            <li>App Store</li>
+            <li>Google Play</li>
+        </ul>
+      </div>
+      <div class="return">
+        <a href="#">
+            <h4>BACK TO TOP <i class="fas fa-caret-up"></i></h4>
+        </a>
+      </div>
+      </div>
+      </footer>
+      <hr>
+      
+      <div class="end">
+        <div class="cpy">
+            <p>Cookie Preferences</p>
+            <p>|</p>
+            <p>© VividStep. All rights reserved.</p>
+        </div>
+       
+      </div>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sendBtn = document.getElementById("sendBtn");
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
+    
+    const nameInput = document.querySelector('input[placeholder="Name"]');
+    const phoneInput = document.querySelector('input[placeholder="Phone"]');
+    const textareaField = document.querySelector("textarea");
+
+    sendBtn.addEventListener("click", function() {
+        let allFieldsFilled = true;
+        let validData = true;
+
+        if (nameInput.value.trim() === "" || !/^[a-zA-Z\s]*$/.test(nameInput.value)) {
+            allFieldsFilled = false;
+            validData = false;
+        }
+
+        if (phoneInput.value.trim() === "" || !/^\d+$/.test(phoneInput.value)) {
+            allFieldsFilled = false;
+            validData = false;
+        }
+
+        if (textareaField.value.trim() === "") {
+            allFieldsFilled = false;
+        }
+
+        if (allFieldsFilled) {
+            popup.querySelector("p").textContent = "Mesajınız tarafımıza iletilmiştir. En kısa sürede size geri dönüş sağlayacağız.";
+            popup.style.display = "block";
+        } else if (!validData) {
+            popup.querySelector("p").textContent = "Lütfen geçerli veri formatıyla doldurun.";
+            popup.style.display = "block";
+        } else {
+            popup.querySelector("p").textContent = "Lütfen tüm alanları eksiksiz şekilde doldurun.";
+            popup.style.display = "block";
+        }
+    });
+
+    closePopup.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+});
+    </script>
+</body>
+</html>

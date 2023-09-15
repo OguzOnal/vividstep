@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VividStep</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/4f46b33591.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="siteTitle">
+  <div class="text" id="siteTitleText"></div>
+</div>
+
+<hr>
+
+<div class="siteHeader">
+  <div class="siteHeaderLeft">
+    <div class="siteLogo">
+      <img src="images/logo.png" alt="">
+    </div>
+  </div>
+
+  <div class="siteHeaderMid">
+    <div class="searchBox">
+      <input type="text" id="searchInput" placeholder="Search">
+      <button id="searchButton"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <div class="siteHeaderRight">
+    <div class="singUp">
+      <button onclick="toggleDropdown()"><i class="fa-regular fa-user" style="color: #000000;"></i></button>
+      <div id="singUpContent">
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="E-Mail">
+        <input type="password" placeholder="Password">
+        <div class="buttonContainer">
+        <button id="singIn" class="button" onclick="singIn()">Sing In</button>
+        <button id="singUp" class="button" onclick="register()">Sing Up</button>
+      </div>
+      </div>
+    </div>
+
+    <div class="favIcon" onclick="toggleFavPopup()">
+      <i class="far fa-heart" style="color: #000000;"></i>
+      <span class="favCount">0</span>
+    </div>
+    
+    <!-- Favori Popup -->
+    <div class="favPopup">
+      <button class="closeFavPopupBtn" onclick="closeFavPopup()"><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
+      <span>Favorites</span>
+      <div class="favPopupContent">
+        <div class="favItems">
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="cartIcon">
+      <i id="cart" class="fas fa-shopping-cart" style="color: #000000;"></i>  
+      <span class="cartCount">0</span>
+    </div>
+
+    <div class="cartPopup">
+      <span>Cart</span>
+      <div class="cartItems">
+      </div>
+      <div class="cartTotal">Cart Empty</div>
+      <button class="closeCartBtn" onclick="closeCart()"><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button> 
+      <div class="purchaseRemoveBtn">
+      <button class="checkoutBtn">Purchase</button>
+      <button class="removeAllBtn" onclick="removeAllFromCart()">Remove All</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div id="results">
+</div>
+
+<hr>
+
+<nav>
+  <div class="spor">    
+    <a id="shoesCategory" href="#nike">Sport Shoes</a>
+    <div class="dropDownContent">
+      <a href="#nike">Nike</a>
+      <a href="#adidas">Adidas</a>
+      <a href="#ua">Under Armour</a>
+    </div>
+  </div>
+  
+  <div class="classic">
+    <a id="shoesCategory" href="#kt">Classic Shoes</a>
+    <div class="dropDownContent">
+      <a href="#kt">Kemal Tanca</a>
+      <a href="#ay">Altın Yıldız</a>
+      <a href="#balayk">Balayk</a>
+    </div> 
+  </div>
+  
+  <div class="boots">
+    <a id="shoesCategory" href="#hd">Boots</a>
+    <div class="dropDownContent">
+      <a href="#hd">Harley Davidson</a>
+      <a href="#cat">Caterpillar</a>
+      <a href="#lj">Lumberjack</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mainSlider">
+  <img class="mainSlide" src="images/slider1.jpg">
+  <img class="mainSlide" src="images/slider.jpg">
+  <img class="mainSlide" src="images/slider2.jpg">
+</div>
+
+<div class="bestSeller">
+  <h1>Best Sellers</h1>
+  <section class="gallery">
+      <div class="carousel">
+
+          <input type="radio" id="image1" name="gallery-control" checked>
+          <input type="radio" id="image2" name="gallery-control">
+          <input type="radio" id="image3" name="gallery-control">
+          <input type="radio" id="image4" name="gallery-control">
+
+
+          <input type="checkbox" id="fullscreen" name="gallery-fullscreen-control"/>
+
+          <div class="wrap">
+
+              <figure>
+                  <label for="fullscreen">
+                      <img src="images/adidas1.png" alt="image3"/>
+                  </label>
+                  <span>Adidas Superstar XLG</span>
+              </figure>
+
+              <figure>
+                  <label for="fullscreen">
+                      <img src="images/ua4.png" alt="image2"/>
+                  </label>
+                  <span>Infinite 5</span>
+              </figure>
+
+              <figure>
+                  <label for="fullscreen">
+                      <img src="images/cat6.png" alt="image3" />
+                  </label>
+                  <span>Colorado 855</span>
+              </figure>
+
+              <figure>
+                <label for="fullscreen">
+                    <img src="images/nike6.png" alt="image4"/>
+                </label>
+                <span>Air Jordan Mid</span>
+            </figure>
+
+          </div>
+
+          <div class="thumbnails">
+
+              <div class="slider"><div class="indicator"></div></div>
+
+              <label for="image1" class="thumb" style="background-image: url('images/adidas1.png')"></label>
+
+              <label for="image2" class="thumb" style="background-image: url('images/ua4.png')"></label>
+
+              <label for="image3" class="thumb" style="background-image: url('images/cat6.png')"></label>
+
+              <label for="image4" class="thumb" style="background-image: url('images/nike6.png')"></label>
+
+
+          </div>
+      </div>
+  </section>
+</div>
+  
+
+<div class="container">
+
+<div class="sportShoeBanner">
+  <img src="images/banner.jpg" alt="">
+</div>
+  <div class="mainPageShoe" id="sportShoes">
+    <div class="productContainer" id="sportShoesContainer">
+      <section id="nike">
+        <div class="productTitle">Nike</div>
+        <div class="cardContainer">
+          <div class="productCard">
+            <figure>
+              <img src="images/nike1.png" alt="Ürün Resmi 1">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Air Monarch IV</h3>
+                <div id="nikeText" class="priceText">
+                  <p>Price: $100</p>
+                </div>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+      
+          <div class="productCard">
+            <figure>
+              <img src="images/nike2.png" alt="Ürün Resmi 2">
+            </figure>
+            <div class="cardColor">
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Blazer Mid 77</h3>
+                <p>Price: $120</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+        </div>
+      </div>
+
+          <div class="productCard">
+            <figure>
+              <img src="images/nike3.png" alt="Ürün Resmi 3">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Air Jordan</h3>
+                <p>Price: $110</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+
+          <div class="productCard">
+            <figure>
+              <img src="images/nike4.png" alt="Ürün Resmi 4">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Air Force 1</h3>
+                <p>Price: $140</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/nike5.png" alt="Ürün Resmi 5">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Air Max Plus</h3>
+                <p>Price: $130</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/nike6.png" alt="Ürün Resmi 6">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Air Jordan Mid</h3>
+                <p>Price: $150</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section id="adidas">
+        <div class="productTitle">Adidas</div>
+        <div class="cardContainer">
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas1.png" alt="Ürün Resmi 1">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Superstar XLG</h3>
+                <p>Price: $120</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas2.png" alt="Ürün Resmi 2">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Rtropy F2 8K</h3>
+                <p>Price: $100</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas3.png" alt="Ürün Resmi 3">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Stan Smith CS</h3>
+                <p>Price: $110</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas4.png" alt="Ürün Resmi 4">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>X_PRL Boost</h3>
+                <p>Price: $340</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas5.png" alt="Ürün Resmi 5">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Supernova 3</h3>
+                <p>Price: $125</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/adidas6.png" alt="Ürün Resmi 6">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Dropset 2 Zero</h3>
+                <p>Price: $115</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      
+      <section id="ua">
+        <div class="productTitle">Under Armour</div>
+        <div class="cardContainer">
+          <div class="productCard">
+            <figure>
+              <img src="images/ua1.png" alt="Ürün Resmi 1">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Turbulence 2</h3>
+                <p>Price: $95</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/ua2.png" alt="Ürün Resmi 2">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Machina 3 062</h3>
+                <p>Price: $110</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/ua3.png" alt="Ürün Resmi 3">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Charged Assert</h3>
+                <p>Price: $80</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/ua4.png" alt="Ürün Resmi 4">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Infinite 5</h3>
+                <p>Price: $120</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/ua5.png" alt="Ürün Resmi 5">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Curry One Low</h3>
+                <p>Price: $130</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+          
+          <div class="productCard">
+            <figure>
+              <img src="images/ua6.png" alt="Ürün Resmi 6">
+            </figure>
+            <section class="details">
+              <div class="cardDetails">
+                <h3>Sonic 6 Breeze</h3>
+                <p>Price: $100</p>
+              </div>
+              <div class="options">
+                <div class="sizes">
+                  <h1>Size</h1>
+                  <form>
+                    <label for="sizeSelect">Choose a shoe size:</label>
+                    <select id="sizeSelect">
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                    </select>
+                </form>
+                </div>
+                <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+                <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div> 
+  </div> 
+ 
+<div class="classicShoeBanner">
+  <img src="images/bannerclassic.png" alt="">
+</div>
+<div class="mainPageShoe" id="classicShoe">
+  <div class="productContainer" id="classicShoesContainer">
+    <section id="kt">
+      <div class="productTitle">Kemal Tanca</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Mocassini 97</h3>
+              <div class="priceText">
+                <p>Price: $45</p>
+                <span>Price: 90</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Moreschi 97</h3>
+              <div class="priceText">
+                <p>Price: $60</p>
+                <span>Price: $120</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Franceschetti</h3>
+              <div class="priceText">
+                <p>Price: $50</p>
+                <span>Price: $100</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Franceschetti</h3>
+              <div class="priceText">
+                <p>Price: $50</p>
+                <span>Price: $100</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Moreschi 99</h3>
+              <div class="priceText">
+                <p>Price: $47.5</p>
+                <span>Price: $95</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/kt6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Tanca Gold 12</h3>
+              <div class="priceText">
+                <p>Price: $65</p>
+                <span>Price: $130</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="ay">
+      <div class="productTitle">Altın Yıldız</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/ay1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Classic Brown</h3>
+              <div class="priceText">
+                <p>Price: $40</p>    
+                <span>Price: $80</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/ay2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Classic Blue</h3>
+              <div class="priceText">
+                <p>Price: $45</p>  
+                <span>Price: $90</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/ay3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Classic Black</h3>
+              <div class="priceText">
+                <p>Price: $50</p>
+                <span>Price: $100</span>  
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/ay4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Glossy Black</h3>
+              <div class="priceText">
+                <p>Price: $47.5</p>  
+                <span>Price: $95</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/ay5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Soft Black</h3>
+              <div class="priceText">
+                <p>Price: $42.5</p>
+                <span>Price: $85</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/ay6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details" >
+            <div class="cardDetails">
+              <h3>Glossy Navy Blue</h3>
+              <div class="priceText">
+                <p>Price: $45</p>      
+                <span>Price: $90</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    
+    <section id="balayk">
+      <div class="productTitle">Balayk</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>1905 B Neolite</h3>
+              <div class="priceText">
+                <p>Price: $55</p>    
+                <span>Price: $110</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>1905 Neolite</h3>
+              <div class="priceText">
+                <p>Price: $50</p>  
+                <span>Price: $100</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>9100 Black S</h3>
+              <div class="priceText">
+                <span>Price: $90</span>
+                <p>Price: $45</p>  
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>1161 Black S</h3>
+              <div class="priceText">
+                <p>Price: $60</p> 
+                <span>Price: $120</span> 
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>1162 Black S</h3>
+              <div class="priceText">
+                <span>Price: $95</span>
+                <p>Price: $47.5</p>  
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/balayk6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>1162 Brown S</h3>
+              <div class="priceText">
+                <p>Price: $50</p>      
+                <span>Price: $100</span>
+              </div>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div> 
+</div>
+
+<div class="bootBanner">
+  <img src="images/bannerboot.jpg" alt="">
+</div>
+<div class="mainPageShoe" id="boots">
+  <div class="productContainer" id="bootsContainer">    
+    <section id="hd">
+      <div class="productTitle">Harley Davidson</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>New Worker</h3>
+              <p>Price: $180</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Gibson Grey</h3>
+              <p>Price: $160</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Millo Olive</h3>
+              <p>Price: $190</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>  
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Jim Nubuck</h3>
+              <p>Price: $170</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Jim Leather</h3>
+              <p>Price: $175</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+
+        <div class="productCard">
+          <figure>
+            <img src="images/hd6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Charles 1120</h3>
+              <p>Price: $200</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="cat">
+      <div class="productTitle">Caterpillar</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/cat1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Vermont Fur</h3>
+              <p>Price: $150</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/cat2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Gridiron 5000</h3>
+              <p>Price: $130</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/cat3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Golden Nubuck</h3>
+              <p>Price: $140</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/cat4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Edina 800</h3>
+              <p>Price: $120</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/cat5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Eluda X 1121</h3>
+              <p>Price: $135</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/cat6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Colorado 855</h3>
+              <p>Price: $160</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    
+    <section id="lj">
+      <div class="productTitle">Lumberjack</div>
+      <div class="cardContainer">
+
+        <div class="productCard">
+          <figure>
+            <img src="images/lj1.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Niya 3PR-1</h3>
+              <p>Price: $140</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/lj2.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Camora 3RP-12</h3>
+              <p>Price: $120</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/lj3.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Brandon 3RP-8</h3>
+              <p>Price: $130</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/lj4.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Debora 3RP-6</h3>
+              <p>Price: $125</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/lj5.png" alt="Ürün Resmi 1">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Shell 3RP-9</h3>
+              <p>Price: $135</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+    
+        <div class="productCard">
+          <figure>
+            <img src="images/lj6.png" alt="Ürün Resmi 2">
+          </figure>
+          <section class="details">
+            <div class="cardDetails">
+              <h3>Flake 3RP-15</h3>
+              <p>Price: $150</p>
+            </div>
+            <div class="options">
+              <div class="sizes">
+                <h1>Size</h1>
+                <form>
+                  <label for="sizeSelect">Choose a shoe size:</label>
+                  <select id="sizeSelect">
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                  </select>
+              </form>
+              </div>
+              <button id="addCart" class="addToCartBtn"><i class="fa-solid fa-cart-plus" style="color: #000000;"></i></button>
+              <button class="addToFavBtn" onclick="addToFavorites(this)"><i class="fa-regular fa-heart" style="color: #000000;"></i></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div> 
+ </div>
+</div>
+
+<div class="brandsTitle">
+  <h1 style="display: flex; justify-content: center; align-items: center; text-align: center;
+   margin-top: 80px; color: #6c6464; font-family: 'Roboto', sans-serif;">BRANDS</h1>
+</div>
+
+<div class="brandsLogos">
+
+  <div class="logo1">
+    <a href="#nike"><img id="nikeLogo" src="images/nikelogo.png" alt=""></a>
+    <a href="#adidas"><img id="adidasLogo" src="images/adidaslogo.png" alt=""></a>
+    <a href="#ua"><img id="uaLogo" src="images/underarmourlogo.png" alt=""></a>
+  </div>
+  
+  <div class="logo2">
+    <a href="#kt"><img id="kemaltancaLogo" src="images/kemaltancalogo.png" alt=""></a>
+    <a href="#ay"><img id="altinyıldızLogo" src="images/altinyildizlogo.png" alt=""></a>
+    <a href="#balayk"><img id="balaykLogo" src="images/balayklogo.png" alt=""></a>
+  </div>
+  
+  <div class="logo3">
+    <a href="#hd"><img id="hdLogo" src="images/harley_davidson_PNG63.png" alt=""></a>
+    <a href="#cat"><img id="catLogo" src="images/Caterpillar-Logo.png" alt=""></a>
+    <a href="#lj"><img id="ljLogo" src="images/lumberjack-logo-659CED147B-seeklogo.com.png" alt=""></a>
+  </div>
+</div>
+
+<footer>
+  <div class="aboutUs">
+    <h3>Who We Are</h3>
+    <ul>
+        <a href="aboutus.html" target="_blank"><li>About Us</li></a>
+        <a href="contact.html" target="_blank"><li>Contact</li></a>
+    </ul>
+</div>
+
+<div class="customerServices">
+  <h3>Customer Services</h3>
+  <ul>
+      <a href="warranty.html" target="_blank"><li>Warranty & Return Conditions</li></a>
+      <a href="faq.html" target="_blank"><li>Frequently Asked Questions</li></a>
+  </ul>
+</div>
+
+<div class="footerRight">
+  <div class="socialMedia">
+  <h3>Follow Us</h3>
+  <ul>
+      <li><i class="fab fa-facebook"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-linkedin"></i></li>
+      <li><i class="fab fa-youtube"></i></li>
+  </ul>
+</div>
+
+
+<div class="mobileApp">
+  <h3>Mobile App</h3>
+  <ul>
+      <li>App Gallery</li>
+      <li>App Store</li>
+      <li>Google Play</li>
+  </ul>
+</div>
+<div class="return">
+  <a href="#">
+      <h4>BACK TO TOP <i class="fas fa-caret-up"></i></h4>
+  </a>
+</div>
+</div>
+</footer>
+<hr>
+
+<div class="end">
+  <div class="cpy">
+      <p>Cookie Preferences</p>
+      <p>|</p>
+      <p>© VividStep. All rights reserved.</p>
+  </div>
+ 
+</div>
+
+<div class="paymentImgs">
+  <img src="images/payment.png" alt="">
+</div>
+
+<script src="./main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
